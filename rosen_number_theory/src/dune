@@ -1,0 +1,4 @@
+(executable
+ (public_name rosen_number_theory)
+ (name main)
+ (libraries rosen_number_theory))
