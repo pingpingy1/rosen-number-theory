@@ -3,6 +3,7 @@
 type frac = Fr of int * int
 
 let num = fst
+
 let denom = snd
 
 let string_of_frac frac =
