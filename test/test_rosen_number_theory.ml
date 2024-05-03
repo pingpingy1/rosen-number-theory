@@ -1,7 +1,8 @@
 open OUnit2
 open Rosen_number_theory.Ch1_sec3_prob3
+open Rosen_number_theory.Ch1_sec5_prob4
 
-let tests =
+let test_ch1_sec3_prob3 =
   "test suite for ch1_sec3_prob3"
   >::: [
          ("modulo1" >:: fun _ -> assert_equal 3 (modulo 30 9));
@@ -19,4 +20,12 @@ let tests =
              (egyptian_frac (44, 101) []) );
        ]
 
-let _ = run_test_tt_main tests
+let test_ch1_sec5_prob4 =
+    "test suite for ch1_sec5_prob4"
+    >::: [
+        ("collatz1" >:: fun _ -> assert_equal [1; 2; 4] (collatz_seq 4 []));
+        ("collatz2" >:: fun _ -> assert_equal [1; 2; 4; 8; 5; 10; 20; 13; 26; 17; 11; 7] (collatz_seq 7 []));
+    ]
+
+let _ = run_test_tt_main test_ch1_sec3_prob3
+let _ = run_test_tt_main test_ch1_sec5_prob4

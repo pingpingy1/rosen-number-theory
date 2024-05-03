@@ -1,4 +1,5 @@
 open Rosen_number_theory.Ch1_sec3_prob3
+open Rosen_number_theory.Ch1_sec5_prob4
 
 let prompt_for_pos_int prompt =
   let rec try_again () =
@@ -23,12 +24,17 @@ let ch1_sec3_prob3 () =
   in
   print_egyptian_frac (num, denom)
 
+let ch1_sec5_prob4 () =
+  let n = prompt_for_pos_int "Please enter a positive integer:" in
+  print_collatz_seq n
+
 let main () =
   let chapter = prompt_for_pos_int "Please enter the chapter:" in
   let section = prompt_for_pos_int "Please enter the section:" in
   let problem = prompt_for_pos_int "Please enter the problem number:" in
   match (chapter, section, problem) with
   | 1, 3, 3 -> ch1_sec3_prob3 ()
+  | 1, 5, 4 -> ch1_sec5_prob4 ()
   | _ -> print_endline "Sorry, I didn\'t solve that problem yet."
 
 let () = main ()
